@@ -9,7 +9,7 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user
 
 
@@ -22,20 +22,20 @@
 |password|string|null: false|
 
 ### Association
-- has_many :groups,through:groups_users
+- has_many :groups,through: :groups_users
 - has_many :messeages
-- belongs_to :groups_users
+- has_many :groups_users
 
 
 ## groupsテーブル
 
 |Column|Type|Options|
-|name|integer|null: false,|
+|name|string|null: false,|
 
 ### Association
-- has_many :user,through:groups_users
+- has_many :user,through: :groups_users
 - has_many :messeages
-- belongs_to :groups_users
+- has_many :groups_users
 
 ## messeageテーブル
 
@@ -47,7 +47,7 @@
 |image|text||
 
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user
 
 
