@@ -17,24 +17,25 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false|
 |mail|string|null: false,|
 |password|string|null: false|
 
 ### Association
 - has_many :groups,through:groups_users
-- has_many :messeage
+- has_many :messeages
+- belongs_to :groups_users
 
 
 ## groupsテーブル
 
 |Column|Type|Options|
-|user_id|integer|null: false, foreign_key: true|
-|groupsname|integer|null: false,|
+|name|integer|null: false,|
 
 ### Association
 - has_many :user,through:groups_users
-- has_many :messeage
+- has_many :messeages
+- belongs_to :groups_users
 
 ## messeageテーブル
 
