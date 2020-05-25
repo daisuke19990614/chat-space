@@ -1,0 +1,33 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__left-box
+      %h2.chat-main__header__left-box__current-group 
+        mm
+      %ul.chat-main__header__left-box__member-list
+        member : name
+    = link_to "" do
+      .chat-main__header__edit-btn Edit
+  .chat-main__messages 
+    .chat-main__messages__message  
+      .chat-main__messages__message__upper-info
+        %p.chat-main__messages__message__upper-info__talker jjjj
+        %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
+      %p.chat-main__messages__message__text yoroshiky
+    .chat-main__messages__message  
+      .chat-main__messages__message__upper-info
+        %p.chat-main__messages__message__upper-info__talker jjjj
+        %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
+      %p.chat-main__messages__message__text yoroshiky
+    
+      
+  .chat-main__form
+    .chat-main__form__message
+      .chat-main__form__message__inputbox
+        %in.chat-main__form__message__inputbox__text type a message
+        %label{class: "chat-main__form__message__inputbox__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "chat-main__form__message__inputbox__image__file"}
+          
+    .chat-main__form__submit-btn
+      Send
+      

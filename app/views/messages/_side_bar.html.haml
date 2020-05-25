@@ -1,0 +1,18 @@
+.chat-side
+  .chat-side__header
+    .chat-side__header__box
+      %p.chat-side__header__box__user-name 紙屋
+      %ul.chat-side__header__box__menu 
+        %li.chat-side__header__box__menu__new-group 
+          = link_to "" do  
+            <i class="fa fa-edit"></i>
+        %li.chat-side__header__box__menu__edit-user
+          = link_to "" do
+            <i class="fa fa-cog"></i>
+  .chat-side__groups 
+    .chat-side__groups__group
+      %p.chat-side__groups__group__group-name dd
+      %p.chat-side__groups__group__latest-message mada
+    .chat-side__groups__group
+      %p.chat-side__groups__group__group-name dd
+      %p.chat-side__groups__group__latest-message mada
