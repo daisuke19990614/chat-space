@@ -55,17 +55,18 @@
         &__group{
           padding-top: 20px;
           padding-bottom: 40px;
+          .GroupLink{
+            text-decoration: none;
+          }
           &__group-name{
             font-size: 15px;
             margin-bottom: 5px;
             color: honeydew;
-          
+            
           }
           &__latest-message{
             font-size: 11px;
             color: honeydew;
-           
-
           }
      
         }

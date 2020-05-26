@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @memo.title
+%p
+  %b Body:
+  = @memo.body
+
+= link_to 'Edit', edit_memo_path(@memo)
+\|
+= link_to 'Back', memos_path
