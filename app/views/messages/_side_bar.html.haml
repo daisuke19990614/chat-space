@@ -1,18 +1,24 @@
 .chat-side
   .chat-side__header
     .chat-side__header__box
-      %p.chat-side__header__box__user-name 紙屋
+      %p.chat-side__header__box__user-name
+        = current_user.name
       %ul.chat-side__header__box__menu 
         %li.chat-side__header__box__menu__new-group 
           = link_to "" do  
-            <i class="fa fa-edit"></i>
+            = icon('fas', 'pen-square', class: 'fa')
+ 
         %li.chat-side__header__box__menu__edit-user
-          = link_to "" do
-            <i class="fa fa-cog"></i>
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'fa')
   .chat-side__groups 
     .chat-side__groups__group
-      %p.chat-side__groups__group__group-name dd
-      %p.chat-side__groups__group__latest-message mada
+      %p.chat-side__groups__group__group-name 
+        dd
+      %p.chat-side__groups__group__latest-message 
+        mada
     .chat-side__groups__group
-      %p.chat-side__groups__group__group-name dd
-      %p.chat-side__groups__group__latest-message mada
+      %p.chat-side__groups__group__group-name 
+        dd
+      %p.chat-side__groups__group__latest-message 
+        mada
