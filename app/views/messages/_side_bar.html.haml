@@ -5,20 +5,19 @@
         = current_user.name
       %ul.chat-side__header__box__menu 
         %li.chat-side__header__box__menu__new-group 
-          = link_to "" do  
+          = link_to new_group_path do
             = icon('fas', 'pen-square', class: 'fa')
  
         %li.chat-side__header__box__menu__edit-user
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'fa')
   .chat-side__groups 
-    .chat-side__groups__group
-      %p.chat-side__groups__group__group-name 
-        dd
-      %p.chat-side__groups__group__latest-message 
-        mada
-    .chat-side__groups__group
-      %p.chat-side__groups__group__group-name 
-        dd
-      %p.chat-side__groups__group__latest-message 
-        mada
+    - current_user.groups.each do |group|
+      .chat-side__groups__group
+        = link_to '#', class: 'GroupLink' do
+          %p.chat-side__groups__group__group-name 
+            = group.name
+            dd
+          %p.chat-side__groups__group__latest-message 
+            メッセージはまだありません
+    
