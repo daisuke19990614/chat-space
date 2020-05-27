@@ -2,12 +2,14 @@
   .chat-main__header
     .chat-main__header__left-box
       %h2.chat-main__header__left-box__current-group 
-        mm
+        = @group.name
       %ul.chat-main__header__left-box__member-list
-        member : name
-    = link_to "" do
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group) do
       .chat-main__header__edit-btn Edit
-  .chat-main__messages 
+  .chat-main__messages
+    = render @messages 
     .chat-main__messages__message  
       .chat-main__messages__message__upper-info
         %p.chat-main__messages__message__upper-info__talker jjjj
@@ -19,15 +21,12 @@
         %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
       %p.chat-main__messages__message__text yoroshiky
     
-      
+   
   .chat-main__form
-    .chat-main__form__message
-      .chat-main__form__message__inputbox
-        %in.chat-main__form__message__inputbox__text type a message
-        %label{class: "chat-main__form__message__inputbox__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "chat-main__form__message__inputbox__image__file"}
-          
-    .chat-main__form__submit-btn
-      Send
-      
+    = form_for [@group, @message] do |f|
+      .inputbox
+        = f.text_field :content, class: 'inputbox__text', placeholder: 'type a message'
+        = f.label :image, class: 'inputbox__image' do
+          = icon('fas', 'image', class: 'fa')
+          = f.file_field :image, class: 'inputbox__image__file'
+      = f.submit 'Send', class: 'submit-btn'
