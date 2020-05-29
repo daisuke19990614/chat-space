@@ -10,16 +10,16 @@
       .chat-main__header__edit-btn Edit
   .chat-main__messages
     = render @messages 
-    .chat-main__messages__message  
-      .chat-main__messages__message__upper-info
-        %p.chat-main__messages__message__upper-info__talker jjjj
-        %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
-      %p.chat-main__messages__message__text yoroshiky
-    .chat-main__messages__message  
-      .chat-main__messages__message__upper-info
-        %p.chat-main__messages__message__upper-info__talker jjjj
-        %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
-      %p.chat-main__messages__message__text yoroshiky
+    -# .chat-main__chat-main___message  
+    -#   .chat-main__messages__message__upper-info
+    -#     %p.chat-main__messages__message__upper-info__talker jjjj
+    -#     %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
+    -#   %p.chat-main__messages__message__text yoroshiky
+    -# .chat-main__messages__message  
+    -#   .chat-main__messages__message__upper-info
+    -#     %p.chat-main__messages__message__upper-info__talker jjjj
+    -#     %p.chat-main__messages__message__upper-info__date 2020/05/23(Sat) 18:42:56
+    -#   %p.chat-main__messages__message__text yoroshiky
     
    
   .chat-main__form
@@ -29,4 +29,4 @@
         = f.label :image, class: 'inputbox__image' do
           = icon('fas', 'image', class: 'fa')
           = f.file_field :image, class: 'inputbox__image__file'
-      = f.submit 'Send', class: 'submit-btn'
+      = f.submit'Send', class: 'submit-btn'
