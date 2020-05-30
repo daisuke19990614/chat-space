@@ -64,7 +64,7 @@ $('#new_message').on('submit', function(e){
 
      .always(function() {
       $('.submit-btn').prop( 'disabled', false )
-  });
+    });
 
-});
+  });
 });
