@@ -40,7 +40,7 @@ class MemosController < ApplicationController
   # PATCH/PUT /memos/1
   # PATCH/PUT /memos/1.json
   def update
-    respond_to do |format|
+    resopond_t do |format|
       if @memo.update(memo_params)
         format.html { redirect_to @memo, notice: 'Memo was successfully updated.' }
         format.json { render :show, status: :ok, location: @memo }
