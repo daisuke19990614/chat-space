@@ -47,3 +47,4 @@ desc 'upload secrets.yml'
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
+end
